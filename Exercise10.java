@@ -1,6 +1,6 @@
-//The code below demonstrates inheritance with regards to java programming
+  //The code below demonstrates inheritance with regards to java programming
 //Containing two major classes, circle and cylinder, the latter(subclass) inherits from the former(superclass). 
-
+//Also demonstrates polymorphism with the getArea methods in both classes
 
 
 
@@ -29,6 +29,8 @@ public class Exercise10{
         + ", Volume is " + cy2.getVolume());
         //Radius is 2.0, Height is 5.0, Color is red,
         //Base area is 12.566370614359172, Volume is 62.83185307179586
+        
+        System.out.println(cy1);
     }
     
 }
@@ -135,9 +137,20 @@ class Cylinder extends Circle{
         this.height = height;
     }
     
+    //This method overrides the toString in the superclass Circle
+    //Demonstrates Polymorphism
+    @Override
     public String toString (){
         
         return "Here is a Cylinder inheriting from the Circle class";
+    }
+    
+    //this method calculates the outer surface area of the cylinder
+    //Demonstrates Polymorphism
+    @Override
+    public double getArea(){
+        
+        return 2 * Math.PI * getRadius();
     }
     
     public double getVolume(){
